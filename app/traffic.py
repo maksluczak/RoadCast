@@ -47,7 +47,7 @@ def get_traffic_volume(start_cords: Tuple, end_cords: Tuple) -> Optional[float]:
     else:
         return None
 
-def generate_route_points(start_cords: Tuple, end_cords: Tuple, n: int) -> List[Tuple[float]]:
+def generate_route_points(start_cords: Tuple, end_cords: Tuple, n: int) -> List[Tuple[float, float]]:
     latitude1, longitude1 = start_cords
     latitude2, longitude2 = end_cords
 
