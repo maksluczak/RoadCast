@@ -16,7 +16,7 @@ def database_connection():
         print("Error while connecting to database:", e)
         return None, None
 
-def insert_data(weekday: int, hour: int, temperature: float, rain: float, traffic_volume: float, trip_duration_minutes:float, historical_travel_time:float):
+def insert_data(weekday: int, hour: int, temperature: float, rain: float, traffic_volume: float, route_lenght:float, trip_duration_minutes:float):
     dbconn, dbcursor = database_connection()
 
     if not dbconn or not dbcursor:
@@ -25,10 +25,10 @@ def insert_data(weekday: int, hour: int, temperature: float, rain: float, traffi
     
     try:
         sql = """
-            INSERT INTO traffic_data (weekday, hour, temperature, rain, traffic_volume, trip_duration_minutes, historical_travel_time) 
+            INSERT INTO traffic_data (weekday, hour, temperature, rain, traffic_volume, route_lenght, trip_duration_minutes) 
             VALUES (%s, %s, %s, %s, %s, %s, %s)
             """
-        val = (weekday, hour, temperature, rain, traffic_volume, trip_duration_minutes, historical_travel_time)
+        val = (weekday, hour, temperature, rain, traffic_volume, route_lenght, trip_duration_minutes)
         dbcursor.execute(sql, val)
         dbconn.commit()
         print("Data inserted successfully")
