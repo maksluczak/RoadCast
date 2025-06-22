@@ -14,5 +14,5 @@ def get_current_weather_by_city(city: str):
             'rain': data.get('rain', {}).get('1h', 0.0)
         }
     except Exception as e:
-        print(f"[ERROR] Error while retrieving route: {e}")
+        print(f"[ERROR] Error while retrieving weather: {e}")
         return None
