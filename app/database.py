@@ -51,7 +51,7 @@ def database_to_csv():
         return
     
     sql = "SELECT * FROM traffic_data"
-    csv_file_path = './exports/traffic_data.csv'
+    csv_file_path = '../exports/traffic_data.csv'
 
     try:
         dbcursor.execute(sql)
