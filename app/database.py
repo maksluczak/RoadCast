@@ -3,7 +3,7 @@ from mysql.connector import Error
 import csv
 import os
 
-os.makedirs('./exports', exist_ok=True)
+os.makedirs('../exports', exist_ok=True)
 
 def database_connection():
     try:
