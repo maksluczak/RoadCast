@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card result-card">
+            <h1>Prediction Result</h1>
+            <div class="result-item">
+                <i class="fas fa-city icon"></i>
+                <p><strong>City:</strong> {{ city }}</p>
+            </div>
+            <div class="result-item">
+                <i class="fas fa-map-marker-alt icon"></i>
+                <p><strong>Start:</strong> {{ start }}</p>
+            </div>
+            <div class="result-item">
+                <i class="fas fa-flag-checkered icon"></i>
+                <p><strong>End:</strong> {{ end }}</p>
+            </div>
+            <hr>
+            <div class="result-item large-text">
+                <i class="far fa-clock icon"></i>
+                <p><strong>Estimated trip duration:</strong> {{ duration }} minutes</p>
+            </div>
+            <div class="result-item">
+                <i class="fas fa-route icon"></i>
+                <p><strong>Route length:</strong> {{ route_length }} km</p>
+            </div>
+            <div class="result-item">
+                <i class="fas fa-cloud-sun icon"></i>
+                <p><strong>Weather:</strong> {{ temp }}°C, {% if rain_mm > 0 %} Rain: {{ rain_mm }}mm {% else %} no precipitation {% endif %}</p>
+            </div>
+            <div class="result-item">
+                <i class="fas fa-traffic-light icon"></i>
+                <p><strong>Traffic intensity:</strong> {{ traffic }}%</p>
+            </div>
+            <a href="/" class="button back-button">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
